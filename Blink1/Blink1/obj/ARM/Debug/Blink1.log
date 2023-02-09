@@ -1,0 +1,10 @@
+﻿  正在验证源
+  正在将源远程复制到“192.168.137.82”
+  正在验证体系结构
+  正在验证体系结构
+  正在启动远程生成
+  正在编译源:
+  main.cpp
+  正在链接对象
+  Blink1.vcxproj -> C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\Blink1\Blink1\bin\ARM\Debug\Blink1.out
+  正在调用“gpio export 17 out”，工作目录:“/home/paper-piano/projects/Blink1/”
