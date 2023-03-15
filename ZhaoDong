@@ -1,0 +1,13 @@
+class PianoKey:
+    def __init__(self, note, is_black):
+        self.note = note
+        self.is_black = is_black
+
+    def press(self):
+        print(f"Playing {self.note}")
+
+# 创建一个钢琴键
+c = PianoKey("C", False)
+
+# 按下钢琴键
+c.press()
