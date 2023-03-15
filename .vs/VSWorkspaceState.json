@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Blink1",
-    "\\Blink1\\Blink1"
+    "\\Blink1\\readme",
+    "\\OpencvTest"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\OpencvTest\\main.cpp",
   "PreviewInSolutionExplorer": false
 }
