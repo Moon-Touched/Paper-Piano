@@ -13,6 +13,7 @@
 #include <string.h>
 
 using namespace std;
+using namespace cv;
 
 /**
  * @brief Piano key class
@@ -22,15 +23,12 @@ class PianoKey
 {
 public:
     string note = ""; /**< Corresponding note of this key(do, re, mi etc.) */
-    void set(char name[]);
-    virtual void isPressed() = 0;
+    Point position;
+    void Pressed(bool isPressed)
+    {
+        if (isPressed)
+        {
+            cout << this.note << "\n";
+        }
+    };
 };
-
-/**
- * @brief Set the name of the note.
- * @param name: do re mi etc
- */
-void PianoKey::set(char name[])
-{
-    note = name;
-}

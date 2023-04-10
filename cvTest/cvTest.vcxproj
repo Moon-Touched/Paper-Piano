@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\Moon-Touched\Desktop\opencvtest\cvTest;C:\Users\Moon-Touched\Desktop\opencv\build\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\cvTest;C:\Users\Moon-Touched\Desktop\opencvtest\cvTest;C:\Users\Moon-Touched\Desktop\opencv\build\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Moon-Touched\Desktop\opencv\build\x64\vc15\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
