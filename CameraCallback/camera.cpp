@@ -16,28 +16,20 @@ void Camera::threadLoop()
  */
 void Camera::postFrame()
 {
-    if (nullptr == sceneCallback)
-        return;
-    cv::Mat cap;
+    Mat cap;
     videoCapture.read(cap);
-    // check if we succeeded
-    if (cap.empty())
-    {
-        std::cerr << "ERROR! blank frame grabbed\n";
-        return;
-    }
-    sceneCallback->nextScene(cap);
+    myCallBack(cap);
 }
 
 /*!
  * Starts the worker thread recording
  */
-void Camera::start(int deviceID, int apiID)
+void Camera::start()
 {
-    videoCapture.set(cv::CAP_PROP_FRAME_WIDTH, 640);
-    videoCapture.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
+    //videoCapture.set(cv::CAP_PROP_FRAME_WIDTH, 640);
+    //videoCapture.set(cv::CAP_PROP_FRAME_HEIGHT, 480);
     isOn = true;
-    videoCapture.open(deviceID, apiID);
+    //videoCapture.open(0);
     cameraThread = std::thread(&Camera::threadLoop, this);
 }
 
@@ -48,4 +40,9 @@ void Camera::stop()
 {
     isOn = false;
     cameraThread.join();
+}
+
+void Camera::registerFrameCallback(CallBack fc)
+{
+    myCallBack = fc;
 }

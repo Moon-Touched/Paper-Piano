@@ -24,11 +24,9 @@ class PianoKey
 public:
     string note = ""; /**< Corresponding note of this key(do, re, mi etc.) */
     Point position;
-    void Pressed(bool isPressed)
+    bool isPressed;
+    void Pressed()
     {
-        if (isPressed)
-        {
-            cout << this.note << "\n";
-        }
+        cout << note << "\n";
     };
 };

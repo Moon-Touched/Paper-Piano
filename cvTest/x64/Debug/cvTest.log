@@ -9,12 +9,12 @@ C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\cvTest\main.c
           [
               _Tp=int
           ]
-C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\cvTest\main.cpp(87,59): warning C4244: “参数”: 从“_Tp”转换到“float”，可能丢失数据
+C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\cvTest\main.cpp(89,59): warning C4244: “参数”: 从“_Tp”转换到“float”，可能丢失数据
           with
           [
               _Tp=int
           ]
-C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\cvTest\main.cpp(87,98): warning C4244: “参数”: 从“_Tp”转换到“float”，可能丢失数据
+C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\cvTest\main.cpp(89,98): warning C4244: “参数”: 从“_Tp”转换到“float”，可能丢失数据
           with
           [
               _Tp=int
