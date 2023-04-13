@@ -6,8 +6,8 @@ class PianoKey:
     def press(self):
         print(f"Playing {self.note}")
 
-# 创建一个钢琴键
+# Create a piano key
 c = PianoKey("C", False)
 
-# 按下钢琴键
+# press the piano keys
 c.press()
