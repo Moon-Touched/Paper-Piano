@@ -1,50 +1,51 @@
-#include <opencv2/imgcodecs.hpp>
-#include <opencv2/highgui.hpp>
-#include <opencv2/imgproc.hpp>
-#include <opencv2/opencv.hpp>
-#include <cstdio>
+﻿#include <opencv2/core.hpp>
+#include <opencv2/videoio.hpp>
+
 #include <iostream>
 #include <stdlib.h>
 #include <thread>
-
-using namespace cv;
-using namespace std;
-/**
- * @brief camera class with callback
- *
+#include "PianoKey.h"
+/*!
+ * Camera class with callback
+ * GNU GPL v3.0
+ * (C) 2022
+ * [Ross Gardiner](https://github.com/rossGardiner)
+ * [Adam Frew](https://github.com/Saweenbarra) 
+ * [Alban Joseph](https://github.com/albanjoseph)
+ * [Lewis Russell](https://github.com/charger4241)
+ * Bernd Porr
  */
-class Camera
-{
+class Camera {
 public:
-    
-    /**
-     * Default constructor
-     **/
-    Camera() = default;
 
-    /**
-     * Starts the acquisition from the camera
-     * and then the callback is called at the framerate.
-     **/
-    void start();
-    /**
-     * Stops the data aqusisition
-     **/
-    void stop();
+    struct PressCallback {
+        virtual int nextScene(vector<PianoKey> &allKeys,const cv::Mat &mat) = 0;
+	};
 
-    void threadLoop();
+    struct DetectCallback {
+        virtual int nextScene(vector<PianoKey> &allKeys,const cv::Mat &mat) = 0;
+    };
 
-    VideoCapture videoCapture;
-    thread cameraThread;
-    bool isOn = false;
-    typedef void (*CallBack)(Mat mat);
-    CallBack myCallBack = nullptr;
+    Camera()=default;
 
-    /**
-     * Registers the callback which receives the
-     * frames.
-     **/
-    void registerFrameCallback(CallBack fc);
+	void start(int deviceID = 0, int apiID = 0);
 
-    void postFrame();
+	void stop();
+
+    void registeraPressCallback(PressCallback* cb) {
+        pressCallback = cb;
+    }
+    void registerCallback(DetectCallback* cb) {
+        callback = cb;
+    }
+    vector<PianoKey> allKeys;
+    int step=0;
+private:
+	void postFrame();
+	void threadLoop();
+	cv::VideoCapture videoCapture;
+	std::thread cameraThread;
+	bool isOn = false;
+    PressCallback* pressCallback = nullptr;
+    DetectCallback * callback= nullptr;
 };

@@ -138,7 +138,7 @@ int main()
             cout << allKeys[i].position << '\n';
             cout << allKeys[i].note << '\n';
         }
-        char key = waitKey(0);
+        char key = pollKey();
         if (key == 'a') // a
         {
             cout << "captured\n";
@@ -162,7 +162,7 @@ int main()
             }
         }
         // esc quit
-        if (waitKey(100) == 27)
+        if (pollKey() == 27)
         {
             break;
         }
