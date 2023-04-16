@@ -30,14 +30,14 @@ Mat convertToEdge(Mat frame)
     return edgeFrame;
 }
 
-void pressDetect(Mat capFrame, vector<PianoKey> allKeys)
+vector<PianoKey> pressDetect(Mat capFrame, vector<PianoKey> allKeys)
 {
     vector<vector<Point>> contours;
     vector<Vec4i> hierarchy;
     vector<Point> approx;
     vector<PianoKey> capturedKeys;
 
-    cv::findContours(convertToEdge(capFrame), contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+    findContours(convertToEdge(capFrame), contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
 
     capturedKeys.clear();
     for (int i = 0; i < contours.size(); i++)
@@ -59,14 +59,15 @@ void pressDetect(Mat capFrame, vector<PianoKey> allKeys)
         bool isPressed = true;
         for (int j = 0; j < capturedKeys.size(); j++)
         {
-            if ((allKeys[i].position.x == capturedKeys[j].position.x))
+            if (abs((allKeys[i].position.x - capturedKeys[j].position.x) < 5) && (abs((allKeys[i].position.y - capturedKeys[j].position.y) < 5)))
             {
                 isPressed = false;
             }
         }
-        allKeys[i].Pressed(isPressed);
+        allKeys[i].isPressed = isPressed;
     }
     imshow("play", capFrame);
+    return allKeys;
 }
 
 vector<PianoKey> rectDetect(Mat capFrame)
@@ -75,26 +76,45 @@ vector<PianoKey> rectDetect(Mat capFrame)
     vector<vector<Point>> contours;
     vector<Vec4i> hierarchy;
     vector<Point> approx;
+    vector<Point> centers;
     vector<PianoKey> allKeys;
 
-    cv::findContours(convertToEdge(capFrame), contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+    findContours(convertToEdge(capFrame), contours, hierarchy, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
 
     allKeys.clear();
-    int j = 0;
+    // find rectangles and record center point
     for (int i = 0; i < contours.size(); i++)
     {
         approxPolyDP(contours[i], approx, arcLength(contours[i], true) * 0.02, true);
         if (approx.size() == 4 && sqrtf(powf((approx[0].x - approx[2].x), 2) + powf((approx[0].y - approx[2].y), 2)) > 50)
         {
             Point center = (approx[0] + approx[2]) / 2;
-            PianoKey newKey;
-            newKey.position = center;
-            newKey.note = noteName[j % 7];
-            j = j + 1;
-            allKeys.push_back(newKey);
+            centers.push_back(center);
             rectangle(capFrame, approx[0], approx[2], Scalar(255), 2);
             circle(capFrame, center, 3, Scalar(0, 255, 0), -1);
         }
+    }
+    // bubble sort center point
+    Point temp;
+    for (int i = 0; i < centers.size(); i++)
+    {
+        for (int j = 0; j < centers.size() - i - 1; j++)
+        {
+            if (centers[j].x > centers[j + 1].x)
+            {
+                temp = centers[j];
+                centers[j] = centers[j + 1];
+                centers[j + 1] = temp;
+            }
+        }
+    }
+    // assign center and note name to keys, and push to vector
+    for (int i = 0; i < centers.size(); i++)
+    {
+        PianoKey newKey;
+        newKey.position = centers[i];
+        newKey.note = noteName[i % 7];
+        allKeys.push_back(newKey);
     }
     imshow("ini", capFrame);
     return allKeys;
@@ -116,8 +136,9 @@ int main()
         for (int i = 0; i < allKeys.size(); i++)
         {
             cout << allKeys[i].position << '\n';
+            cout << allKeys[i].note << '\n';
         }
-        char key = waitKey(0);
+        char key = pollKey();
         if (key == 'a') // a
         {
             cout << "captured\n";
@@ -132,9 +153,16 @@ int main()
     while (true)
     {
         cap.read(capFrame);
-        pressDetect(capFrame, allKeys);
+        allKeys = pressDetect(capFrame, allKeys);
+        for (int i = 0; i < allKeys.size(); i++)
+        {
+            if (allKeys[i].isPressed)
+            {
+                cout << allKeys[i].note << "\n";
+            }
+        }
         // esc quit
-        if (waitKey(30) == 27)
+        if (pollKey() == 27)
         {
             break;
         }

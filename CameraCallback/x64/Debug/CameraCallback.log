@@ -1,0 +1,24 @@
+﻿  camera.cpp
+  main.cpp
+C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\CameraCallback\main.cpp(31,59): warning C4244: “参数”: 从“_Tp”转换到“float”，可能丢失数据
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\CameraCallback\main.cpp(31,98): warning C4244: “参数”: 从“_Tp”转换到“float”，可能丢失数据
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\CameraCallback\main.cpp(72,59): warning C4244: “参数”: 从“_Tp”转换到“float”，可能丢失数据
+          with
+          [
+              _Tp=int
+          ]
+C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\CameraCallback\main.cpp(72,98): warning C4244: “参数”: 从“_Tp”转换到“float”，可能丢失数据
+          with
+          [
+              _Tp=int
+          ]
+  正在生成代码...
+  CameraCallback.vcxproj -> C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\CameraCallback\x64\Debug\CameraCallback.exe
