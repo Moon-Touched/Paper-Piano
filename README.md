@@ -1,10 +1,5 @@
 # Paper Piano
-
-An example of hand detection is as follows ：    
-* Picture example：  
-![03b34b1f93796640a73494721e365ba](https://user-images.githubusercontent.com/127966120/231911747-6bfe8fa8-30c9-4e38-a783-6c5129b49988.png)
-![90daad36309c5c7abe70a7562500943](https://user-images.githubusercontent.com/127966120/231911750-303a0ac8-6f86-40e7-993b-fd845ac443a7.png)
-
+![1a850e7f0fbf527ce8a594be7264bfd](https://user-images.githubusercontent.com/103563340/232306862-8a78c59b-50db-45c7-840b-f6bb2d6f425b.jpg)
 
 ## Project Overview
 This project aims to develop a real-time piano key recognition and audio output system based on Raspberry Pi. 
@@ -22,7 +17,7 @@ image processing technology to realize piano key recognition and key detection i
 ## Hardware Requirements
 
 1. Raspberry Pi
-2. Camera (USB camera compatible with Raspberry Pi or Raspberry Pi Camera Module)
+2. Camera (Raspberry Pi Camera Module)
 3. Speaker or headphones (connected to Raspberry Pi's 3.5mm audio jack or using a Bluetooth speaker)
 
 ## Software Requirements
@@ -53,3 +48,7 @@ pip3 install -r requirements.txt
 2. Support for more types of keyboard instruments.
 3. Add recognition and audio output for multiple keys pressed simultaneously.
 
+## An example of hand detection is as follows ：    
+* Picture example：  
+![03b34b1f93796640a73494721e365ba](https://user-images.githubusercontent.com/127966120/231911747-6bfe8fa8-30c9-4e38-a783-6c5129b49988.png)
+![90daad36309c5c7abe70a7562500943](https://user-images.githubusercontent.com/127966120/231911750-303a0ac8-6f86-40e7-993b-fd845ac443a7.png)
