@@ -178,7 +178,7 @@ struct MyCallback1 myCallback1;
  */
 int main(int argc, char **argv)
 {
-    system(string("nohup echo \"loop 0\" > ../tmp/ff").c_str());
+    //system(string("nohup echo \"loop 0\" > ../tmp/ff").c_str());
     Camera camera;
     camera.registerCallback(&myCallback);
     camera.registeraPressCallback(&myCallback1);
