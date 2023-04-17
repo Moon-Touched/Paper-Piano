@@ -48,5 +48,6 @@ public:
             play_count = 0;
             std::cout << note << std::endl;
         }
+
     }
 };

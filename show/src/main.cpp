@@ -74,14 +74,15 @@ void pressDetect(Mat capFrame, vector<PianoKey> &allKeys)
         }
         else
         {
+            allKeys[i].Pressed(false);
             allKeys[i].isPlaying = false;
         }
         // rectangle(capFrame, range, Scalar(255), 2);
     }
-    //if (!anyPressed)
+    // if (!anyPressed)
     //{
-    //    system(string("nohup echo \"pausing_toggle pause\" > ../tmp/ff").c_str());
-    //}
+    //     system(string("nohup echo \"pausing_toggle pause\" > ../tmp/ff").c_str());
+    // }
     imshow("play", capFrame);
     imshow("qqq", binaryFrame);
 }
@@ -95,8 +96,8 @@ void pressDetect(Mat capFrame, vector<PianoKey> &allKeys)
  */
 vector<PianoKey> rectDetect(Mat capFrame)
 {
-    // string noteName[] = {"xi", "la", "so", "fa", "mi", "re", "do"};
-    string noteName[] = {"do1", "re1", "mi1", "fa1", "so1", "la1", "xi1", "do2", "re2", "mi2", "fa2", "so2", "la2", "xi2"};
+    // string noteName[] = {"xi", "la", "so", "fa", "mi", "re", "do"};"do2", "re2", "mi2", "fa2", "so2", "la2", "xi2"
+    string noteName[] = {"do1", "re1", "mi1", "fa1", "so1", "la1", "xi1"};
     vector<vector<Point>> contours;
     vector<Vec4i> hierarchy;
     vector<Point> approx;
@@ -113,7 +114,7 @@ vector<PianoKey> rectDetect(Mat capFrame)
             Point center = (approx[0] + approx[2]) / 2;
             PianoKey newKey;
             newKey.position = center;
-            newKey.note = noteName[j % 14];
+            newKey.note = noteName[j % 7];
             newKey.left = min(approx[0].x, approx[2].x);
             newKey.top = max(approx[0].y, approx[2].y);
             newKey.right = max(approx[0].x, approx[2].x);
@@ -178,7 +179,7 @@ struct MyCallback1 myCallback1;
  */
 int main(int argc, char **argv)
 {
-    //system(string("nohup echo \"loop 0\" > ../tmp/ff").c_str());
+    // system(string("nohup echo \"loop 0\" > ../tmp/ff").c_str());
     Camera camera;
     camera.registerCallback(&myCallback);
     camera.registeraPressCallback(&myCallback1);
