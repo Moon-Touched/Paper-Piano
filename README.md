@@ -8,6 +8,10 @@
 
 This project aims to develop a real-time piano key recognition and audio output system based on Raspberry Pi. The camera captures and recognizes the keys printed on the paper, and when a key action is detected, the corresponding audio will be played in real time. This system uses computer vision and image processing technology to realize piano key recognition and key detection in various scenarios.
 
+## Social media
+
+[https://twitter.com/PaperPiano](https://twitter.com/PaperPiano)
+
 ## Members
 
 FangZhou Liu(2751741L)
@@ -52,7 +56,7 @@ Han Zhang(2755881Z)
     sudo apt install mplayer
     ```
     
-3. Download rasPi folder to your raspberryPi, navigate to the folder and run the codes below. A executable file named ‘main’ will be generated in rasPi folder.
+3. Download rasPi folder to your raspberryPi, navigate to the folder and run the codes below. A executable file named ‘main’ will be generated in the build folder.
     
     ```bash
     mkdir build
@@ -79,6 +83,5 @@ Han Zhang(2755881Z)
 
 - developing demo example：
     
-    ![https://user-images.githubusercontent.com/127966120/231911747-6bfe8fa8-30c9-4e38-a783-6c5129b49988.png](https://user-images.githubusercontent.com/127966120/231911747-6bfe8fa8-30c9-4e38-a783-6c5129b49988.png)
     
-    ![https://user-images.githubusercontent.com/127966120/231911750-303a0ac8-6f86-40e7-993b-fd845ac443a7.png](https://user-images.githubusercontent.com/127966120/231911750-303a0ac8-6f86-40e7-993b-fd845ac443a7.png)
+    [372ce5e7a3087d05368b9e8819bc000f.mp4](README%20449fc8455e314eb0a8f3f84dd914dc94/372ce5e7a3087d05368b9e8819bc000f.mp4)
