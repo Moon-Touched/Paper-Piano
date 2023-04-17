@@ -11,6 +11,8 @@ https://twitter.com/PaperPiano
 
 This project aims to develop a real-time piano key recognition and audio output system based on Raspberry Pi. The camera captures and recognizes the keys printed on the paper, and when a key action is detected, the corresponding audio will be played in real time. This system uses computer vision and image processing technology to realize piano key recognition and key detection in various scenarios.
 
+More specific doxgen documents can be found in rasPi forder or show folder. Those 2 version of codes have same function but differenr step to use it on RaspberryPi.
+
 ## Social media
 
 [https://twitter.com/PaperPiano](https://twitter.com/PaperPiano)
@@ -52,14 +54,14 @@ Han Zhang(2755881Z)
     sudo apt upgrade
     ```
     
-2. Install opencv and mplayer. The Pi OS should has include C++ 
+2. Install opencv and mplayer. The Pi OS should has include C++ environments don't need installation.
     
     ```bash
     sudo apt install libopencv-dev
     sudo apt install mplayer
     ```
     
-3. Download rasPi folder to your raspberryPi, navigate to the folder and run the codes below. A executable file named ‘main’ will be generated in the build folder.
+3. Download rasPi or show folder to your raspberryPi, navigate to the folder and run the codes below. A executable file named ‘cvKey’ will be generated in the build folder.
     
     ```bash
     mkdir build
@@ -85,6 +87,7 @@ Han Zhang(2755881Z)
 ## An example of hand detection is as follows ：
 
 - developing demo example：
-https://user-images.githubusercontent.com/103563340/232417611-817593ec-6931-4159-823a-1d9ba0f7faf0.mp4
+https://user-images.githubusercontent.com/103563340/232533313-ad513ca6-4c4b-4f53-844a-a986e2bf0c66.mp4
+
 
 
