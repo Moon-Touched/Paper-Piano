@@ -85,4 +85,6 @@ Han Zhang(2755881Z)
 ## An example of hand detection is as follows ：
 
 - developing demo example：
-   
+https://user-images.githubusercontent.com/103563340/232417611-817593ec-6931-4159-823a-1d9ba0f7faf0.mp4
+
+
