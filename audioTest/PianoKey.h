@@ -40,7 +40,7 @@ public:
         }
         if (play_count == 10 && play_count > 0)
         {
-            system(string("nohup echo \"loadfile " + note + ".mp3\" > ../tmp/ff").c_str());
+            system(string("nohup loadfile " + note + ".mp3 > ../tmp/ff").c_str());
             //system(string("nohup mplayer -idle ../sound/" + note + ".mp3  &").c_str());
             play_count = 0;
             std::cout << note << std::endl;

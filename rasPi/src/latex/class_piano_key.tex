@@ -1,0 +1,69 @@
+\hypertarget{class_piano_key}{}\doxysection{Piano\+Key Class Reference}
+\label{class_piano_key}\index{PianoKey@{PianoKey}}
+
+
+\mbox{\hyperlink{class_piano_key}{Piano\+Key}} calss.  
+
+
+
+
+{\ttfamily \#include $<$Piano\+Key.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_piano_key_a5aa5dd47125354de4df270a5b2032fa0}{Pressed}} (bool is\+Pressed)
+\begin{DoxyCompactList}\small\item\em Will be called when play\+\_\+count exceed a threshold. Will output corresponding audio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_piano_key_a72495abecfc4a49a15d3ce3390ae7040}\label{class_piano_key_a72495abecfc4a49a15d3ce3390ae7040}} 
+string {\bfseries note} = \char`\"{}\char`\"{}
+\begin{DoxyCompactList}\small\item\em THe note that this key represent to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_piano_key_aeb5488dc2ca01c889b745b494827aa00}\label{class_piano_key_aeb5488dc2ca01c889b745b494827aa00}} 
+Point {\bfseries position}
+\begin{DoxyCompactList}\small\item\em The center coordinate of this key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_piano_key_a1445f44ec8d2a90a42ad4346962a726e}\label{class_piano_key_a1445f44ec8d2a90a42ad4346962a726e}} 
+int {\bfseries left}
+\begin{DoxyCompactList}\small\item\em The left boundary of this key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_piano_key_a84a237221b11717b7bc824df34574f6e}\label{class_piano_key_a84a237221b11717b7bc824df34574f6e}} 
+int {\bfseries right}
+\begin{DoxyCompactList}\small\item\em The right boundary of this key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_piano_key_a0276c42b12f64fd5024cfc1370a1e22d}\label{class_piano_key_a0276c42b12f64fd5024cfc1370a1e22d}} 
+int {\bfseries top}
+\begin{DoxyCompactList}\small\item\em The top boundary of this key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_piano_key_ac730b6b0034d1a060e56d45263c89b0b}\label{class_piano_key_ac730b6b0034d1a060e56d45263c89b0b}} 
+int {\bfseries bottom}
+\begin{DoxyCompactList}\small\item\em The bottom boundary of this key. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_piano_key_a77ef6048adf93cc95b1435dde782b9bf}\label{class_piano_key_a77ef6048adf93cc95b1435dde782b9bf}} 
+int {\bfseries play\+\_\+count} = 0
+\begin{DoxyCompactList}\small\item\em record howmany frames the key is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_piano_key}{Piano\+Key}} calss. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_piano_key_a5aa5dd47125354de4df270a5b2032fa0}\label{class_piano_key_a5aa5dd47125354de4df270a5b2032fa0}} 
+\index{PianoKey@{PianoKey}!Pressed@{Pressed}}
+\index{Pressed@{Pressed}!PianoKey@{PianoKey}}
+\doxysubsubsection{\texorpdfstring{Pressed()}{Pressed()}}
+{\footnotesize\ttfamily void Piano\+Key\+::\+Pressed (\begin{DoxyParamCaption}\item[{bool}]{is\+Pressed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Will be called when play\+\_\+count exceed a threshold. Will output corresponding audio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Pressed} & whether the key is pressed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Piano\+Key.\+h\end{DoxyCompactItemize}

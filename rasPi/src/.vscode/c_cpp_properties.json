@@ -4,10 +4,10 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/include/opencv4"
+                "C:\\Users\\Moon-Touched\\Desktop\\opencv\\build\\include"
             ],
             "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "compilerPath": "",
             "cStandard": "c17",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "linux-gcc-arm64"

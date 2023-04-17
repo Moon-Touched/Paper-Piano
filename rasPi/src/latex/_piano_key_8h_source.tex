@@ -1,0 +1,43 @@
+\hypertarget{_piano_key_8h_source}{}\doxysection{Piano\+Key.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <opencv2/imgcodecs.hpp>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <opencv2/highgui.hpp>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <opencv2/imgproc.hpp>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <opencv2/opencv.hpp>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00010\ \textcolor{keyword}{using\ namespace\ }cv;}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_piano_key}{PianoKey}}}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_piano_key_a72495abecfc4a49a15d3ce3390ae7040}{note}}\ =\ \textcolor{stringliteral}{"{}"{}};\ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ Point\ \mbox{\hyperlink{class_piano_key_aeb5488dc2ca01c889b745b494827aa00}{position}};\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_piano_key_a1445f44ec8d2a90a42ad4346962a726e}{left}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_piano_key_a84a237221b11717b7bc824df34574f6e}{right}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_piano_key_a0276c42b12f64fd5024cfc1370a1e22d}{top}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_piano_key_ac730b6b0034d1a060e56d45263c89b0b}{bottom}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_piano_key_a77ef6048adf93cc95b1435dde782b9bf}{play\_count}}\ =\ 0;\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_piano_key_a5aa5dd47125354de4df270a5b2032fa0}{Pressed}}(\textcolor{keywordtype}{bool}\ isPressed)}
+\DoxyCodeLine{00034\ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isPressed)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piano_key_a77ef6048adf93cc95b1435dde782b9bf}{play\_count}}++;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ std::cout<<play\_count<<std::endl;}}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_piano_key_a77ef6048adf93cc95b1435dde782b9bf}{play\_count}}\ \%\ 10\ ==\ 0\ \&\&\ \mbox{\hyperlink{class_piano_key_a77ef6048adf93cc95b1435dde782b9bf}{play\_count}}\ >\ 0)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ system(\textcolor{keywordtype}{string}(\textcolor{stringliteral}{"{}mplayer\ /home/pp/paperpiano/sound/"{}}\ +\ \mbox{\hyperlink{class_piano_key_a72495abecfc4a49a15d3ce3390ae7040}{note}}\ +\ \textcolor{stringliteral}{"{}.mp3"{}}).c\_str());}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ system(string("{}nohup\ mplayer\ sound/"{}\ +\ note\ +\ "{}.mp3"{}).c\_str());}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piano_key_a77ef6048adf93cc95b1435dde782b9bf}{play\_count}}\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \mbox{\hyperlink{class_piano_key_a72495abecfc4a49a15d3ce3390ae7040}{note}}\ <<\ std::endl;}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}
