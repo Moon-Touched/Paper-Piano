@@ -60,7 +60,12 @@ Mat convertToBinary(Mat frame)
  */
 void pressDetect(Mat capFrame, vector<PianoKey> &allKeys)
 {
-    bool anyPressed;
+    bool anyPressed = false;
+
+    if (!anyPressed)
+    {
+        system(string("nohup echo \"pause\" > ../tmp/ff").c_str());
+    }
     Mat binaryFrame = convertToBinary(capFrame);
     for (int i = 0; i < allKeys.size(); i++)
     {
@@ -75,13 +80,10 @@ void pressDetect(Mat capFrame, vector<PianoKey> &allKeys)
         else
         {
             allKeys[i].isPlaying = false;
+            //allKeys[i].Pressed(false);
         }
         // rectangle(capFrame, range, Scalar(255), 2);
     }
-    //if (!anyPressed)
-    //{
-    //    system(string("nohup echo \"pausing_toggle pause\" > ../tmp/ff").c_str());
-    //}
     imshow("play", capFrame);
     imshow("qqq", binaryFrame);
 }
@@ -123,7 +125,6 @@ vector<PianoKey> rectDetect(Mat capFrame)
             rectangle(capFrame, approx[0], approx[2], Scalar(255), 2);
             circle(capFrame, center, 3, Scalar(0, 255, 0), -1);
             putText(capFrame, newKey.note, newKey.position - Point(20, 0), 0, 1, Scalar(255, 0, 0), 2);
-            putText(capFrame, "Press q to continue", Point(0, 20), 0, 1, Scalar(255, 0, 0), 2);
         }
     }
     imshow("ini", capFrame);
@@ -178,7 +179,6 @@ struct MyCallback1 myCallback1;
  */
 int main(int argc, char **argv)
 {
-    system(string("nohup echo \"loop 0\" > ../tmp/ff").c_str());
     Camera camera;
     camera.registerCallback(&myCallback);
     camera.registeraPressCallback(&myCallback1);

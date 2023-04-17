@@ -39,11 +39,14 @@ public:
             play_count++;
             //            std::cout<<play_count<<std::endl;
         }
-
-        if (play_count == 5 && play_count > 0)
+        
+        if (play_count == 10 && play_count > 0)
         {
-            system(string("nohup echo \"loadfile " + note + ".mp3\" > ../tmp/ff").c_str());
-            isPlaying = true;
+            if (!isPlaying)
+            {
+                system(string("nohup echo \"loadfile " + note + ".mp3\" > ../tmp/ff").c_str());
+                isPlaying = true;
+            }
             // system(string("nohup mplayer -idle ../sound/" + note + ".mp3  &").c_str());
             play_count = 0;
             std::cout << note << std::endl;
