@@ -4,6 +4,9 @@
 
 ![https://user-images.githubusercontent.com/103563340/232306862-8a78c59b-50db-45c7-840b-f6bb2d6f425b.jpg](https://user-images.githubusercontent.com/103563340/232306862-8a78c59b-50db-45c7-840b-f6bb2d6f425b.jpg)
 
+## Social Media
+https://twitter.com/PaperPiano
+
 ## Project Overview
 
 This project aims to develop a real-time piano key recognition and audio output system based on Raspberry Pi. The camera captures and recognizes the keys printed on the paper, and when a key action is detected, the corresponding audio will be played in real time. This system uses computer vision and image processing technology to realize piano key recognition and key detection in various scenarios.
@@ -82,6 +85,4 @@ Han Zhang(2755881Z)
 ## An example of hand detection is as follows ：
 
 - developing demo example：
-    
-    
-    [372ce5e7a3087d05368b9e8819bc000f.mp4](README%20449fc8455e314eb0a8f3f84dd914dc94/372ce5e7a3087d05368b9e8819bc000f.mp4)
+   
