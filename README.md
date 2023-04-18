@@ -113,7 +113,7 @@ Han Zhang(2755881Z)
     mkfifo /tmp/xi1
     ```
     
-3. Navigate to show/sound forder. Run each line in 7 different command line tabs or windows. So that each key can be monitored separately.
+3. Navigate to show/sound forder. Run each line so that each key can be monitored separately.
     
     ```bash
     mplayer -slave -idle -input file=../tmp/do1 do1.mp3
@@ -129,9 +129,8 @@ Han Zhang(2755881Z)
 
 ## Future Improvements
 
-1. Improve the accuracy and speed of piano key recognition.
+1. Need a better way to play audio files. Or use code to run mplayer insted of input by hand.
 2. Support for real structure of piano(2 rows of keys) and more types of keyboard instruments.
-3. Add recognition and audio output for multiple keys pressed simultaneously.
 
 ## An example of hand detection is as follows ：
 
