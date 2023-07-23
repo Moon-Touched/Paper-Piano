@@ -13,6 +13,8 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Multimedia)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Multimedia)
 find_package(OpenCV REQUIRED)
 
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+
 set(PROJECT_SOURCES
         main.cpp
         piano.cpp
@@ -21,6 +23,14 @@ set(PROJECT_SOURCES
         camera.h camera.cpp
         key.h
 )
+
+add_library(Camera camera.h camera.cpp)
+target_link_libraries(Camera ${OpenCV_LIBS})
+target_compile_definitions(Camera PRIVATE UNIT_TEST)
+
+add_library(Key key.h)
+target_link_libraries(Key Qt${QT_VERSION_MAJOR}::Widgets Qt5::Multimedia)
+target_compile_definitions(Key PRIVATE UNIT_TEST)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(PaperPiano

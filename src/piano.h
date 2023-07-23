@@ -31,7 +31,16 @@ public:
         void runDetection(const cv::Mat &mat);
 
 private:
+     /**
+     * @brief find which key is pressed
+     * @param mat
+     */
     void pressDetect(const cv::Mat &mat);
+
+    /**
+     * @brief find key locations
+     * @param mat
+     */
     void keyInit(const cv::Mat &mat);
 
 private:
