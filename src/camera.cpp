@@ -1,7 +1,7 @@
 #include "camera.h"
 
 /*!
- * Loops while camera is on to add frames to the pipeline
+ * The function operates in a loop as long as the camera is active to add frames to the pipeline.
  */
 void Camera::threadLoop(){
     while(isOn){
@@ -10,22 +10,22 @@ void Camera::threadLoop(){
 }
 
 /*!
- * Gets the next available frame and passes it on to the registered callback. Relies on the videoCapture.read() OpenCV method which is understood to wait for an intra-frame delay.
+ * Retrieves the next accessible frame and forwards it to the assigned callback. This function depends on the OpenCV method videoCapture.read(), which is assumed to delay for an intra-frame period.
  */
 void Camera::postFrame(){
     if(nullptr == sceneCallback) return;
     cv::Mat cap;
     videoCapture.read(cap);
-    // check if we succeeded
+    // Verify if the operation is successful
     if (cap.empty()) {
-        std::cerr << "ERROR! blank frame grabbed\n";
+        std::cerr << "ERROR! Grabbed frame is blank\n";
         return;
     }
     sceneCallback->nextScene(cap);
 }
 
 /*!
- * Starts the worker thread recording
+ * Initializes the recording on a separate thread.
  */
 void Camera::start(int deviceID, int apiID){
 	isOn=true;
@@ -34,7 +34,7 @@ void Camera::start(int deviceID, int apiID){
 }
 
 /*!
- * Frees thread resources and stops recording, must be called prior to program exit.
+ * Halts recording, releases thread resources, and must be invoked prior to program termination.
  */
 void Camera::stop(){
     isOn=false;

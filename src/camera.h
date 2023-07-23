@@ -8,31 +8,31 @@
 class Camera {
 public:
 	/**
-	 * Callback which needs to be implemented by the client
+	 * This callback must be implemented by the client.
 	 **/
 	struct SceneCallback {
 		virtual void nextScene(const cv::Mat &mat) = 0;
 	};
 
 	/**
-	 * Default constructor
+	 * Basic constructor.
 	 **/
 	Camera() = default;
 
 	/**
-	 * Starts the acquisition from the camera
-	 * and then the callback is called at the framerate.
+	 * Initiates the data capture from the camera.
+	 * The callback function is invoked at the frame rate.
 	 **/
 	void start(int deviceID = 0, int apiID = 0);
 
 	/**
-	 * Stops the data aqusisition
+	 * Ceases the data acquisition from the camera.
 	 **/
 	void stop();
 
 	/**
-	 * Registers the callback which receives the
-	 * frames.
+	 * Assigns the callback that will be receiving
+	 * the frames.
 	 **/
 	void registerSceneCallback(SceneCallback* sc) {
 		sceneCallback = sc;
