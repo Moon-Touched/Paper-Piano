@@ -1,0 +1,58 @@
+\doxysection{Camera Class Reference}
+\hypertarget{class_camera}{}\label{class_camera}\index{Camera@{Camera}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_camera_1_1_frame_callback}{Frame\+Callback}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_camera_ae23af4d7cab430c77d537621cdd16b3f}{Camera}} ()=default
+\item 
+void \mbox{\hyperlink{class_camera_a1bd5611a664361f4777ad7d5f327edfa}{start\+Capture}} (int device\+Index=0, int api\+Index=0)
+\item 
+void \mbox{\hyperlink{class_camera_a6b31643ed6fb8121858c63e4a580ecd6}{end\+Capture}} ()
+\item 
+void \mbox{\hyperlink{class_camera_ab16bd072ac05fb02a0c56ab31614f989}{register\+Frame\+Callback}} (\mbox{\hyperlink{struct_camera_1_1_frame_callback}{Frame\+Callback}} \texorpdfstring{$\ast$}{*}callback)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_camera_ae23af4d7cab430c77d537621cdd16b3f}\label{class_camera_ae23af4d7cab430c77d537621cdd16b3f} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+Basic constructor. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_camera_a6b31643ed6fb8121858c63e4a580ecd6}\label{class_camera_a6b31643ed6fb8121858c63e4a580ecd6} 
+\index{Camera@{Camera}!endCapture@{endCapture}}
+\index{endCapture@{endCapture}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{endCapture()}{endCapture()}}
+{\footnotesize\ttfamily void Camera\+::end\+Capture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Ceases the data acquisition from the camera.
+
+Halts recording, releases thread resources, and must be invoked prior to program termination. \Hypertarget{class_camera_ab16bd072ac05fb02a0c56ab31614f989}\label{class_camera_ab16bd072ac05fb02a0c56ab31614f989} 
+\index{Camera@{Camera}!registerFrameCallback@{registerFrameCallback}}
+\index{registerFrameCallback@{registerFrameCallback}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{registerFrameCallback()}{registerFrameCallback()}}
+{\footnotesize\ttfamily void Camera\+::register\+Frame\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_camera_1_1_frame_callback}{Frame\+Callback}} \texorpdfstring{$\ast$}{*}}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Assigns the callback that will be receiving the frames. \Hypertarget{class_camera_a1bd5611a664361f4777ad7d5f327edfa}\label{class_camera_a1bd5611a664361f4777ad7d5f327edfa} 
+\index{Camera@{Camera}!startCapture@{startCapture}}
+\index{startCapture@{startCapture}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{startCapture()}{startCapture()}}
+{\footnotesize\ttfamily void Camera\+::start\+Capture (\begin{DoxyParamCaption}\item[{int}]{device\+Identifier = {\ttfamily 0},  }\item[{int}]{api\+Identifier = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+Initiates the data capture from the camera. The callback function is invoked at the frame rate.
+
+Initializes the recording on a separate thread. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+camera.\+h\item 
+camera.\+cpp\end{DoxyCompactItemize}

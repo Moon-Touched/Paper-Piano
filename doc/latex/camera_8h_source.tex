@@ -1,0 +1,36 @@
+\doxysection{camera.\+h}
+\hypertarget{camera_8h_source}{}\label{camera_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <opencv2/core.hpp>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <opencv2/videoio.hpp>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_camera}{Camera}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_camera_1_1_frame_callback}{FrameCallback}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ onNewFrame(\textcolor{keyword}{const}\ cv::Mat\ \&frame)\ =\ 0;}
+\DoxyCodeLine{00015\ \ \ \ \ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_camera_ae23af4d7cab430c77d537621cdd16b3f}{Camera}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_a1bd5611a664361f4777ad7d5f327edfa}{startCapture}}(\textcolor{keywordtype}{int}\ deviceIndex\ =\ 0,\ \textcolor{keywordtype}{int}\ apiIndex\ =\ 0);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_a6b31643ed6fb8121858c63e4a580ecd6}{endCapture}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_camera_ab16bd072ac05fb02a0c56ab31614f989}{registerFrameCallback}}(\mbox{\hyperlink{struct_camera_1_1_frame_callback}{FrameCallback}}*\ callback)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ frameCallback\ =\ callback;}
+\DoxyCodeLine{00039\ \ \ \ \ \}}
+\DoxyCodeLine{00040\ \ \ \ \ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ deliverFrame();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ runLoop();}
+\DoxyCodeLine{00044\ \ \ \ \ cv::VideoCapture\ videoStream;}
+\DoxyCodeLine{00045\ \ \ \ \ std::thread\ cameraThread;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ cameraActive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00047\ \ \ \ \ FrameCallback*\ frameCallback\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00048\ \};}
+
+\end{DoxyCode}
