@@ -10,8 +10,8 @@ public:
 	/**
 	 * This callback must be implemented by the client.
 	 **/
-	struct SceneCallback {
-		virtual void nextScene(const cv::Mat &mat) = 0;
+	struct FrameCallback {
+		virtual void onNewFrame(const cv::Mat &frame) = 0;
 	};
 
 	/**
@@ -23,26 +23,26 @@ public:
 	 * Initiates the data capture from the camera.
 	 * The callback function is invoked at the frame rate.
 	 **/
-	void start(int deviceID = 0, int apiID = 0);
+	void startCapture(int deviceIndex = 0, int apiIndex = 0);
 
 	/**
 	 * Ceases the data acquisition from the camera.
 	 **/
-	void stop();
+	void endCapture();
 
 	/**
 	 * Assigns the callback that will be receiving
 	 * the frames.
 	 **/
-	void registerSceneCallback(SceneCallback* sc) {
-		sceneCallback = sc;
+	void registerFrameCallback(FrameCallback* callback) {
+		frameCallback = callback;
 	}
     
 private:
-	void postFrame();
-	void threadLoop();
-	cv::VideoCapture videoCapture;
+	void deliverFrame();
+	void runLoop();
+	cv::VideoCapture videoStream;
 	std::thread cameraThread;
-	bool isOn = false;
-	SceneCallback* sceneCallback = nullptr;
+	bool cameraActive = false;
+	FrameCallback* frameCallback = nullptr;
 };
