@@ -131,7 +131,7 @@ Connecting a speaker or headphones to a Raspberry Pi can enhance the functionali
 2. OpenCV library
 3. mplayer(Raspberry Pi OS).
 
-## Installation Guide
+## How to Build
 
 1. Update your Pi first.
     
@@ -168,61 +168,6 @@ Connecting a speaker or headphones to a Raspberry Pi can enhance the functionali
     sudo ./SmartCam
     ```
 
-## User Instructions
-
-- rasPi
-1. Generate a FIFO file in the folder.
-    
-    ```bash
-    cd rasPi
-    mkfifo /tmp/ff
-    ```
-    
-2. Run the codes below in command line. The mplayer will play a note to indicate it is running and been set to slave mode. The mplayer will monitor named pipe(FIFO file). So that the program can operate the player.
-    
-    ```bash
-    mplayer -slave -idle -input file=../tmp/ff do1.mp3
-    ```
-    
-3. In another command line window, run the project
-    
-    ```bash
-    cd rasPi/build
-    ./cvKey
-    ```
-    
-4. The system will capture graph and recognize the piano keys. It will assign note to keys from left to right.
-5. Adjust camera or your paper until obtain a satisfied view then press q.
-6. The program will start detect weather a key is pressed and play the audio of the key’s note.
-
-- show
-1. Compare with previous version. This version has faster response to pressed key. But need more preparation.
-2. Generate a FIFO file in the folder. Each will be assigned to a mplayer.
-    
-    ```bash
-    cd show
-    mkfifo /tmp/do1
-    mkfifo /tmp/re1
-    mkfifo /tmp/mi1
-    mkfifo /tmp/fa1
-    mkfifo /tmp/so1
-    mkfifo /tmp/la1
-    mkfifo /tmp/xi1
-    ```
-    
-3. Navigate to show/sound forder. Run each line so that each key can be monitored separately.
-    
-    ```bash
-    mplayer -slave -idle -input file=../tmp/do1 do1.mp3
-    mplayer -slave -idle -input file=../tmp/re1 re1.mp3
-    mplayer -slave -idle -input file=../tmp/mi1 mi1.mp3
-    mplayer -slave -idle -input file=../tmp/fa1 fa1.mp3
-    mplayer -slave -idle -input file=../tmp/so1 so1.mp3
-    mplayer -slave -idle -input file=../tmp/la1 la1.mp3
-    mplayer -slave -idle -input file=../tmp/xi1 xi1.mp3
-    ```
-    
-4. Other step are the same.
 
 ## Future Improvements
 
