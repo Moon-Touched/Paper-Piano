@@ -20,13 +20,18 @@ More specific doxgen documents can be found in rasPi forder or show folder. Thos
 
 ## Members
 
-FangZhou Liu(2751741L)
-
 Dong Zhao(2818441Z)
 
-Zheng Chen(2706870C)
+Zhao will oversee the encapsulation aspect of the Paper Piano project. This involves wrapping up the code in a way that it becomes easy to use and manage, while also protecting it from interference from other parts of the program. Zhao's role is essential in ensuring that the final product is robust, maintainable, and user-friendly.
 
 Han Zhang(2755881Z)
+
+Zhang will be in charge of all testing procedures for the Paper Piano project. This includes initial testing, ongoing testing throughout the development process, and final testing before project completion. Zhang's role is crucial in ensuring that the Paper Piano functions correctly and meets all specified requirements.
+
+Zheng Chen(2706870C)(quit)
+
+FangZhou Liu(2751741L)(quit)
+
 
 ## Features
 
@@ -80,7 +85,7 @@ I/O ports can be interface with external devices and sensors. These ports can be
 Raspberry Pi can be an effective solution for real-time embedded programming, and it requires proper configuration and software development skills to ensure the system operates in real-time with the required accuracy and precision.
 
 ### 2) Pi Camera
-
+![logo](images/camera.jpg)
 Raspberry Pi v2.1 8 MP 1080p Camera Module
 
 Memory storage capacity: 12 GB
@@ -98,6 +103,8 @@ Maximum of 1080P30 and 8MP Stills in Raspberry Pi Board
 More information: [Amazon](https://www.amazon.co.uk/Raspberry-Pi-1080p-Camera-Module/dp/B01ER2SKFS)
 
 ### 3) Speaker or headphones
+
+![logo](images/speaker.jpg)
 
 Speaker or headphones are used as audio output devices which can be connected to Raspberry Pi’s 3.5mm jack or HDMI output.
 
