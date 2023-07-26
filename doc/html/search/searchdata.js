@@ -1,27 +1,21 @@
 var indexSectionsWithContent =
 {
-  0: "mnprs",
-  1: "p",
-  2: "mp",
-  3: "rs",
-  4: "n"
+  0: "cefkmprs",
+  1: "cfkmp",
+  2: "cekrs"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "files",
-  3: "functions",
-  4: "variables"
+  2: "functions"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Files",
-  3: "Functions",
-  4: "Variables"
+  2: "Functions"
 };
 

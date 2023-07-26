@@ -1,2 +1,0 @@
-C:\Users\Moon-Touched\Desktop\opencvtest\cvTest\x64\Debug\cvTest.exe
-C:\Users\Moon-Touched\OneDrive - University of Glasgow\paper piano\cvTest\x64\Debug\cvTest.exe
