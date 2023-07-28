@@ -85,7 +85,9 @@ I/O ports can be interface with external devices and sensors. These ports can be
 Raspberry Pi can be an effective solution for real-time embedded programming, and it requires proper configuration and software development skills to ensure the system operates in real-time with the required accuracy and precision.
 
 ### 2) Pi Camera
+
 ![logo](images/camera.jpg)
+
 Raspberry Pi v2.1 8 MP 1080p Camera Module
 
 Memory storage capacity: 12 GB
@@ -166,13 +168,13 @@ Connecting a speaker or headphones to a Raspberry Pi can enhance the functionali
     ```bash
     mkdir build
     cd build
-    cmake ..make
+    cmake ../
+    make
     ```
 
  5. Run
     ```
-    cd build_SmartCam
-    sudo ./SmartCam
+    sudo ./PaperPiano
     ```
 
 
