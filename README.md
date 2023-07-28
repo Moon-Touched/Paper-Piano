@@ -163,7 +163,7 @@ Connecting a speaker or headphones to a Raspberry Pi can enhance the functionali
    ```
 
 
-4. Download rasPi or show folder to your raspberryPi, navigate to the folder and run the codes below. A executable file named ‘cvKey’ will be generated in the build folder.
+4. Navigate to the folder and run the codes below. A executable file named ‘cvKey’ will be generated in the build folder.
     
     ```bash
     mkdir build
